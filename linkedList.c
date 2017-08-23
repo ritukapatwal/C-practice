@@ -79,8 +79,9 @@ void deleteAt(int index){
     head=head->next;
     nodeToBeDeleted->next=NULL;
     size--;
+    return;
   }
-  if(index<0|| index>size-1){
+  if(index<0|| index>size){
     printf("Index out of bounds\n" );
     return;
   }else{
@@ -91,10 +92,14 @@ void deleteAt(int index){
     struct Node* nodeToBeDeleted = marker->next;
     printf("%d\n",nodeToBeDeleted->rollNo );
     marker->next=nodeToBeDeleted->next;
+    if(nodeToBeDeleted->next!=NULL)
     printf("%d\n",nodeToBeDeleted->next->rollNo );
+    if(index==size-1){
+      tail=marker;
+    }
     nodeToBeDeleted->next=NULL;
     size--;
-    
+
   }
 }
 int main(){
@@ -106,6 +111,6 @@ int main(){
   insertAtIndex(50,2);
   display(head);
   printf("Now the list is after deletion\n" );
-  deleteAt(1);
+  deleteAt(3);
   display(head);
 }
