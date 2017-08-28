@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<conio.h>
 #include<malloc.h>
 int j,i=0,queue[10],max=10,head=-1,tail=-1;
 
@@ -20,10 +19,10 @@ int j,i=0,queue[10],max=10,head=-1,tail=-1;
 void display(){
 printf("the traversal of queue is:\n");
 for(i=head,j=0;i<=tail;i++,j++){
-   printf("data of node %d is %d",j,queue[i]);
-   printf("\n");
-   }
-   }
+   printf("%d<-",queue[i]);
+  }
+  printf("END\n");
+}
 void insert(int data){
 if(tail==max-1){printf("insertion not possible\n");
  }
@@ -31,27 +30,17 @@ if(tail==max-1){printf("insertion not possible\n");
 }
 void delet(){
 
- printf("\nvalue deleted is:\n");
- printf("%d",queue[head]);
+ printf("\nvalue deleted is: ");
+ printf("%d\n",queue[head]);
  head++;
-	}
+}
 
+int  main(){
 
-
-
-
-
-
-
-
-void main(){
-clrscr();
-create();
-display();
-insert(10);
-display();
-delet();
-display();
-
-
- getch(); }
+  create();
+  display();
+  insert(10);
+  display();
+  delet();
+  display();
+}
