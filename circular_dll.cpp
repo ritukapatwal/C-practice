@@ -8,6 +8,8 @@ using namespace std;
   Node *next;
 };
 Node *head=NULL;
+
+
 Node *tail=NULL;
 
 void insertBeg(int id){
